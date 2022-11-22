@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+import BookCreate from "./components/BookCreate"
 
 function App() {
   const [books, setBooks] = useState([])
@@ -7,7 +8,11 @@ function App() {
     console.log("need to add book with title:", title)
   }
 
-  return <div>App</div>
+  return (
+    <div>
+      <BookCreate onCreate={createBook} />
+    </div>
+  )
 }
 
 export default App
