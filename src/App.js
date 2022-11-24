@@ -8,7 +8,7 @@ function App() {
   const editBookById = (id, newTitle) => {
     const updatedBooks = books.map(book => {
       if (book.id === id) {
-        return { ...books, newTitle }
+        return { ...book, title: newTitle }
       }
 
       return book
@@ -28,7 +28,7 @@ function App() {
   const createBook = title => {
     const updatedBooks = [
       ...books,
-      { id: Math.round(Math.random() * 9999), title: title }
+      { id: Math.round(Math.random() * 9999), title: title },
     ]
     setBooks(updatedBooks)
   }
